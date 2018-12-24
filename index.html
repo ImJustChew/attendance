@@ -10,6 +10,8 @@
         <link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css" rel="stylesheet">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
         <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     </head>
     <body class="body">
@@ -19,28 +21,61 @@
             <span class="mdl-layout-title">Attendance</span>
             </div>
             </header>
-        <main class="mdl-layout__content" style="text=align:center">
-          <div class="page-content" style="width:70%;display:inline-block">
-            <div class="description-title-text">Select Teacher</div>
-            <ul class="mdl-list" style="width:100%">
-              <li class="mdl-list__item">
-                <span class="mdl-list__item-primary-content">
-                  Bryan Cranston
-                </span>
-              </li>
-              <li class="mdl-list__item">
-                <span class="mdl-list__item-primary-content">
-                  Aaron Paul
-                </span>
-              </li>
-              <li class="mdl-list__item">
-                <span class="mdl-list__item-primary-content">
-                  Bob Odenkirk
-                </span>
-              </li>
-            </ul>
+        <main class="mdl-layout__content" style="text-align:center;height:100%">
+          <div class="page-content">
+            <div class="content-container-3">
+              <div class="description-title-text">Select Date</div>
+              <div class="description-desc-text">&nbsp</div>
+              <input type="text" class="datepicker">
+            </div>
+            <div class="content-container-3">
+              <div class="description-title-text">Who are you?</div>
+              <div class="description-desc-text">&nbsp</div>
+              <div class="input-field col s12">
+                <select>
+                  <optgroup label="team 1">
+                    <option value="1">Option 1</option>
+                    <option value="2">Option 2</option>
+                  </optgroup>
+                  <optgroup label="team 2">
+                    <option value="3">Option 3</option>
+                    <option value="4">Option 4</option>
+                  </optgroup>
+                </select>
+              </div>
+            </div>
+            <div class="content-container-3">
+              <div class="description-title-text">Confirm your attendance</div>
+              <div class="description-desc-text">&nbsp</div>
+              <p>
+                <label>
+                  <input name="attendance" type="radio" checked />
+                  <span>Yes</span>
+                </label>
+              </p>
+              <p>
+                <label>
+                  <input name="attendance" type="radio" />
+                  <span>No</span>
+                </label>
+              </p>
+              <p>
+                <button class="mdl-button mdl-js-button mdl-button--primary" style="border:1px solid #d0d0d0;border-radius:8px">
+                  Submit
+                </button>
+              </p>
+            </div>
           </div>
         </main>
         </div>
+        <script>
+        $(document).ready(function(){
+          $('.datepicker').datepicker();
+        });
+        $(document).ready(function(){
+          $('select').formSelect();
+        });
+
+        </script>
     </body>
 </html>
